@@ -4,3 +4,188 @@
 *:after {
   box-sizing: border-box;
 }
+
+
+/******* SMALL VIEW ***************/
+
+/******HEADER*********/
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+ 
+}
+#top-header a {
+  text-decoration: none;
+}
+.siteName a{
+  font-size: 32px;
+  color: #D32727;
+  
+}
+/******NAVIGATION*********/
+nav {
+  background-color: black;
+  margin: 7px;
+  
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  
+}
+nav ul li{
+  list-style: none;
+  color: white;
+font-size: 16px;
+  margin: 15px 25px 15px 0px;
+  padding: 0;
+
+}
+
+/******BODY*********/
+.dmc_delorean {
+  background-color: azure;
+  width: 40%;
+  
+  position: relative;
+  bottom: -90px;
+}
+.dmc_delorean  p {
+  color: #22426D;
+}
+.own_today {
+  background-color: black;
+  width: 70%;
+  padding: 1px;
+}
+.own_today p {
+  color: #fff;
+  font-weight: bold;
+}
+.dmc_heading {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+h2 {
+  margin-bottom: -80px;
+}
+.image-container{
+  width: 70%;
+  margin-left: 60px;
+}
+.image-container img {
+  width: 100%;
+}
+.flux, .bumper, .flame, .hub{
+  background-color: #D32727;
+  width: 90%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.upgrade_images {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  margin: 5px 0px 30px 15px;
+}
+
+.bumper img {
+  margin: 0px 0px 9px 30px;
+}
+.flux img {
+  margin: 0px 0px 0px 30px;
+}
+.flame img {
+  margin: 0px 0px 0px 30px;
+}
+.hub img {
+  margin: 0px 0px 0px 30px;
+}
+.span-bumper, .span-hub, .span-flame, .span-flux{
+  text-align: center;
+}
+.flux_and_link, .flame_and_link {
+  margin-bottom: 25px;
+}
+
+
+
+
+/******* MEDIUM VIEW ***************/
+@media only screen and (min-width: 35rem) {
+  .dmc_delorean  p {
+   font: 28px;
+  }
+  .delorean_reviews ul li {
+font: 28px;
+  }
+  .bumper img, .flame img, .flux img , .hub img {
+    margin: 0px 0px 0px 120px;
+  }
+}
+
+
+/******* LARGE VIEW ***************/
+@media only screen and (min-width: 60rem) {
+  .review_upgrade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "upgrades reviews"; /* Swapped the names */
+  }
+  .delorean_reviews {
+    grid-area: reviews;
+    margin-left: 300px;
+  }
+ h3 {
+  margin-left: 25px;
+ }
+  .upgrade_images {
+    grid-area: upgrades;
+  
+  }
+  .image-container {
+    width: 40%;
+  }
+  .dmc_delorean {
+    width: 25%;
+  }
+  .bumper img, .flame img, .flux img , .hub img {
+    margin: 0px 0px 0px 90px;
+  }
+  .image-container img {
+    margin-top: -120px;
+    margin-left: 250px;
+  }
+  .dmc_delorean {
+    margin-left: 50px;
+    width: 20%;
+  }
+  .entire_content, #top-header, nav, footer {
+    max-width: 1200px;
+    margin:0 auto;
+    background-color: #fff;
+    /* border: 2px solid blue; */
+/*     
+  z-index: 1000 !important ;  */}
+
+   .background-wrapper{
+    background-image: url('/images/site/small_check.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    /* max-width: 1320px; */
+  }
+
+  nav {
+    background-color: black;
+    /* margin: 7px; */
+    
+  }
+#tools a {
+  margin: 0px 50px 0px 0px;
+}
+}
