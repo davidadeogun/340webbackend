@@ -25,3 +25,15 @@ async function getInventoryByClassificationId(classification_id) {
 }
 
 module.exports = {getClassifications, getInventoryByClassificationId};
+
+
+
+//step
+async function getInventoryItemById(invId) {
+  // Assuming we have a database connection defined and operational
+  
+  const query = "SELECT * FROM Inventory WHERE id = ?";
+  const vehicle = await db.query(query, [invId]); // db is your database object
+  return vehicle;
+}
+module.exports = {getClassifications, getInventoryItemById};

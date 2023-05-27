@@ -66,3 +66,21 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+
+//fix the issue here
+// in the utilities > index.js file
+
+function buildVehicleHTML(vehicle) {
+  let html = `
+    <div>
+      <h1>${vehicle.make} ${vehicle.model}</h1>
+      <img src="${vehicle.full_size_image_url}" alt="${vehicle.make} ${vehicle.model}">
+      <p>Year: ${vehicle.year}</p>
+      <p>Price: $${(vehicle.price).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+      <p>Mileage: ${(vehicle.mileage).toLocaleString()}</p>
+      <p>Description: ${vehicle.description}</p>
+    </div>
+  `;
+  return html;
+}
