@@ -9,7 +9,7 @@ router.get("/type/:classificationId", invController.buildByClassificationId);
 
 //Step
 // Route to deliver the inventory detail view
-router.get("/detail/:invId", invController.deliverItemDetail);
+router.get("/detail/:inventoryId", invController.buildByVehicleInventoryId);
 
 
 module.exports = router;

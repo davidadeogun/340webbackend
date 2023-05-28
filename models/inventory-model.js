@@ -27,13 +27,20 @@ async function getInventoryByClassificationId(classification_id) {
 module.exports = {getClassifications, getInventoryByClassificationId};
 
 
-
-//step
-async function getInventoryItemById(invId) {
-  // Assuming we have a database connection defined and operational
-  
-  const query = "SELECT * FROM Inventory WHERE id = ?";
-  const vehicle = await db.query(query, [invId]); // db is your database object
-  return vehicle;
+//Step
+/* ***************************
+ *  Get one vehicle by inventory_id
+ * ************************** */
+async function getVehicleInfoByInventorynId(inventory_id) {
+  try {
+    const data = await pool.query(
+      "SELECT * FROM public.inventory WHERE inv_id = $1",[inventory_id]
+    )
+    return data.rows
+  } catch (error) {
+    console.error("get vehicle info by id error " + error)
+  }
 }
-module.exports = {getClassifications, getInventoryItemById};
+
+module.exports = {getClassifications, getInventoryByClassificationId, getVehicleInfoByInventorynId};
+

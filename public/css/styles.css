@@ -24,19 +24,24 @@
   
 }
 /******NAVIGATION*********/
-nav {
+nav a{
   background-color: black;
   margin: 7px;
-  
+  color: #fff;
+  text-decoration: none;
+
 }
 nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  text-align: center;
+  text-align: center; 
+  color: #fff;
+  background-color: black;
+
   
 }
-nav ul li{
+nav ul li {
   list-style: none;
   color: white;
 font-size: 16px;
@@ -112,9 +117,38 @@ h2 {
   margin-bottom: 25px;
 }
 
+#inv-display{
+display: grid;
+grid-template-columns: 1fr;
+margin: 30px 0px 0px 60px;
+}
+#inv-display li {
+  list-style: none;
+}
+#inv-display img {
+  margin-top: 40px;
 
+}
+h1 {
+  text-align: center;
+}
 
-
+.namePrice {
+  margin: 50px 0px 100px 0px;
+}
+h2 a{
+  text-decoration: none;
+  
+}
+.flex-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+.copyright {
+  text-align: center;
+  margin-top: 150px;
+}
 /******* MEDIUM VIEW ***************/
 @media only screen and (min-width: 35rem) {
   .dmc_delorean  p {
@@ -126,8 +160,15 @@ font: 28px;
   .bumper img, .flame img, .flux img , .hub img {
     margin: 0px 0px 0px 120px;
   }
+  .flex-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
-
+.error-message {
+  text-align: center;
+}
 
 /******* LARGE VIEW ***************/
 @media only screen and (min-width: 60rem) {
@@ -188,4 +229,14 @@ font: 28px;
 #tools a {
   margin: 0px 50px 0px 0px;
 }
+
+#inv-display{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 30px 0px 0px 60px;
+ 
+  }
+  hr{
+    display: none;
+  }
 }

@@ -68,19 +68,37 @@ Util.buildClassificationGrid = async function(data){
 }
 
 
-//fix the issue here
-// in the utilities > index.js file
+//Step
 
-function buildVehicleHTML(vehicle) {
-  let html = `
-    <div>
-      <h1>${vehicle.make} ${vehicle.model}</h1>
-      <img src="${vehicle.full_size_image_url}" alt="${vehicle.make} ${vehicle.model}">
-      <p>Year: ${vehicle.year}</p>
-      <p>Price: $${(vehicle.price).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
-      <p>Mileage: ${(vehicle.mileage).toLocaleString()}</p>
-      <p>Description: ${vehicle.description}</p>
-    </div>
-  `;
-  return html;
+/* **************************************
+* Build the vehicle info view HTML
+* ************************************ */
+Util.buildVehicleInfoGrid = async function(data){
+  let infoView 
+  if(data.length > 0){
+    let vehicle = data[0]
+    infoView = '<div class="flex-container">'
+    infoView += '<div class="vehicle-image">'
+    infoView += '<img src="' + vehicle.inv_image 
+    +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
+    +' on CSE Motors" />'
+    infoView += '</div>'
+    infoView += '<div class="vehicle-details">'
+    infoView += '<h3 class="vehicle-make-model">' + vehicle.inv_year + ' ' + vehicle.inv_make + ' ' + vehicle.inv_model + '  ($' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + ')</h3>'
+    infoView += '<div class="vehicle-specs">'
+    infoView += '<p><strong>Mileage </strong>: ' + new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + '</p>'
+    infoView += '<p><strong>Color </strong>: ' + vehicle.inv_color + '</p>'
+    infoView += '<p><strong>Year </strong>: ' + vehicle.inv_year + '</p>'
+    infoView += '<p><strong>Make </strong>: ' + vehicle.inv_make + '</p>'
+    infoView += '<p><strong>Model </strong>: ' + vehicle.inv_model + '</p>'
+    infoView += '<p><strong>Drive train </strong>: All wheel drive</p>'
+    infoView += '<p><strong>Description </strong>: ' + vehicle.inv_description + '</p>'
+    infoView += '</div>'
+    infoView += '</div>'
+    infoView += '</div>'
+  } else { 
+    infoView += '<p class="notice">Sorry, no matching vehicle could be found for the supplied id.</p>'
+  }
+  return infoView
 }
+module.exports = Util
