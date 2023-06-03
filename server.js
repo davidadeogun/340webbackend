@@ -7,19 +7,57 @@
  *************************/
 
 // This is the one shown in the video by prof  https://www.youtube.com/watch?v=KESjrocakuI
+//Unit4 Week 7 & 8 additions
+const session = require("express-session")
+const pool = require('./database/')
+
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const baseController = require("./controllers/baseController") //Added a new require statement to bring the base controller into scope
 const utilities = require("./utilities/")  // Added this line to bring the utilities into scope
+const bodyParser = require("body-parser")
+
+
+
+
+
 
 /* ***********************
  * View Engine and Templates
  *************************/
+/* ***********************
+ * Middleware
+ * ************************/
+app.use(session({
+  store: new (require('connect-pg-simple')(session))({
+    createTableIfMissing: true,
+    pool,
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  name: 'sessionId',
+}))
+
+// Express Messages Middleware
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
+
+
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
+
+
 
 
 /* ***********************
@@ -27,17 +65,14 @@ app.set("layout", "./layouts/layout")
  *************************/
 app.use(require("./routes/static"))
 
-/*Example of the route to deliver the home view*/
-//This is the initial route that was used
-// app.get("/", function(req, res) {
-//   res.render("index", {title: "Home"})
-// })
-
-//Index route
+//Index route - Unit 3 
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
-//Inventory routes
+//Inventory routes -  Unit 3
 app.use("/inv", require("./routes/inventoryRoute"))
+
+//Account routes - Unit 4
+app.use("/account", require("./routes/accountRoute"))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {

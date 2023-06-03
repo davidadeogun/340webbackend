@@ -1,0 +1,39 @@
+<% if (title) { %>
+    <h1><%= title %></h1> 
+    <% } else {
+        res.redirect('/')
+    } %>
+
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+<div class="main-container">
+   
+    <div class="login-container">
+        <form id="registerForm" action="/account/register" method="post">
+            <input type="firstname" name="account_firstname" placeholder="First Name" required value="<%= locals.account_firstname %>">
+           <input type="lastname" name="account_lastname" placeholder="Last Name" required value="<%= locals.account_lastname %>">
+     
+           <input type="email" name="account_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required value="<%= locals.account_email %>">
+        
+           <input type="password" name="account_password" placeholder="Password" id="pword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+           <p class="password-instruction">Password must be minimum of 12 characters and incldues 1 capital letter,
+            1 number and 1 special character.
+           </p>
+      
+           <button type="submit">Register</button>
+       </form>
+   
+   </div>
+</div>
+
+
+       
+          
+   

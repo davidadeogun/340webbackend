@@ -149,6 +149,87 @@ h2 a{
   text-align: center;
   margin-top: 150px;
 }
+
+#flash-message {
+  text-align: center;
+  color: #22426D;
+  text-decoration: none;
+  list-style: none;
+}
+
+/***********************/
+/*ACCOUNT - LOGIN STYLING*/
+/***********************/
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+
+}
+.show-password {
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.password-instruction {
+  font-style: italic;
+}
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 50px 50px 100px 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  border: 2px solid #007bff;
+
+
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.login-container form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  background-color: #0056b3;
+}
+
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+      width: 90%;
+  }
+}
+
+
+
+
 /******* MEDIUM VIEW ***************/
 @media only screen and (min-width: 35rem) {
   .dmc_delorean  p {

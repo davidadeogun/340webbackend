@@ -8,6 +8,9 @@ const nav = await utilities.getNav()  /*calls a getNav() function that will be f
    *  using the response object. The index view will need the "title" name - value pair,
    *  and the nav variable. The nav variable will contain the string of HTML code to render 
    * this dynamically generated navigation bar.***/
+
+  /*Unit 4*/
+//  req.flash("notice", "This is a flash message.")
   res.render("index", {title: "Home", nav})
 }
 
