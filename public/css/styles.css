@@ -177,6 +177,7 @@ h2 a{
 .password-instruction {
   font-style: italic;
 }
+
 .login-container {
   width: 100%;
   max-width: 400px;
@@ -186,8 +187,6 @@ h2 a{
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
   border: 2px solid #007bff;
-
-
 }
 
 .login-container form {
@@ -195,10 +194,16 @@ h2 a{
   flex-direction: column;
 }
 
-.login-container form input {
-  margin-bottom: 10px;
-  padding: 10px;
+.login-container form input, form select, form textarea {
+  margin-bottom: 5px;
+  padding: 5px;
   border: 1px solid #ddd;
+}
+
+.login-container form label {
+  margin-top: 2px;
+  padding: 2px;
+  text-align: left;
 }
 
 .login-container form button {
@@ -227,16 +232,37 @@ h2 a{
   }
 }
 
+/*Modifications*/
+
+form input:not(:placeholder-shown) {
+  border:solid #ffdddd;
+  background: #ffdddd;
+}
+
+form input:valid, textarea:valid {
+  border:solid #ddffdd;
+  background:#ddffdd;
+}
+
+.form-instruction {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.form-error-msg {
+  font-style: oblique;
+  color: #D32727;
+}
 
 
 
 /******* MEDIUM VIEW ***************/
 @media only screen and (min-width: 35rem) {
   .dmc_delorean  p {
-   font: 28px;
+   font-size: 28px;
   }
   .delorean_reviews ul li {
-font: 28px;
+font-size: 28px;
   }
   .bumper img, .flame img, .flux img , .hub img {
     margin: 0px 0px 0px 120px;
