@@ -49,6 +49,15 @@ font-size: 16px;
   padding: 0;
 
 }
+/*For the notice message on the Register page view*/
+.notice {
+  color: #D32727;
+  text-align: center;
+  list-style: none;
+ font-style: italic;
+}
+
+/*for the styling of the add vehicle on the Add Classification page*/
 
 /******BODY*********/
 .dmc_delorean {
@@ -152,7 +161,7 @@ h2 a{
 
 #flash-message {
   text-align: center;
-  color: #22426D;
+  color: red;
   text-decoration: none;
   list-style: none;
 }
@@ -164,7 +173,7 @@ h2 a{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+ 
   margin: 0;
   padding: 0;
 
@@ -186,7 +195,7 @@ h2 a{
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
-  border: 2px solid #007bff;
+  border: 2px solid #003E80
 }
 
 .login-container form {
@@ -208,8 +217,8 @@ h2 a{
 
 .login-container form button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: #003E80;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 }
@@ -222,7 +231,7 @@ h2 a{
   display: block;
   text-align: center;
   margin-top: 10px;
-  color: #007bff;
+  color: #003E80;
   text-decoration: none;
 }
 

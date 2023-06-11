@@ -13,7 +13,9 @@
 <div class="main-container">
     <div class="login-container">
         <form action="/inv/add-classification" method="post">
-           <input type="text" name="name" placeholder="Classification name" value="<%= locals.name %>" pattern="[a-zA-Z]{3,25}$" required>
+
+            <label for="cname">Classification name</label>
+           <input id="cname" type="text" name="name" placeholder="Enter Classification name" value="<%= locals.name %>" pattern="[a-zA-Z]{3,25}$" required>
            <p class="form-instruction">Classification name must contain only letters</p>
            <button type="submit">Submit</button>
        </form>
