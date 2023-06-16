@@ -16,9 +16,9 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const baseController = require("./controllers/baseController") //Added a new require statement to bring the base controller into scope
-const utilities = require("./utilities/")  // Added this line to bring the utilities into scope
+const utilities = require("./utilities/index")  // Added this line to bring the utilities into scope
 const bodyParser = require("body-parser")
-
+const cookieParser = require("cookie-parser")  //Unit 5
 
 
 
@@ -52,6 +52,11 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+app.use(cookieParser())  //Unit 5
+app.use(utilities.checkJWTToken) //Unit 5
+
+
 
 app.set("view engine", "ejs")
 app.use(expressLayouts)

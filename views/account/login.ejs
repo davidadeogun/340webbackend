@@ -5,6 +5,13 @@
     } %>
 
 
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
 
 
 <p ><%- messages() %></p>
@@ -13,11 +20,11 @@
     <div class="login-container">
         <form id="loginForm" action="/account/login" method="post">
 
-            <label for="email">Email</label>
-           <input id="email" type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            <label for="account_email">Email</label>
+           <input id="email" type="text" name="account_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 
-           <label for="password">Password</label>
-           <input id="password" type="text" name="password" placeholder="Password" id="pword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+           <label for="account_password">Password</label>
+           <input id="password" type="text" name="account_password" placeholder="Password" id="pword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
 
 
            <p class="password-instruction">Password must be minimum of 12 characters and incldues 1 capital letter,
