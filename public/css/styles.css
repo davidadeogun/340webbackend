@@ -84,9 +84,9 @@ font-size: 16px;
   font-weight: bolder;
 }
 
-h2 {
-  margin-bottom: -80px;
-}
+/*h2 {*/
+/*  margin-bottom: -80px;*/
+/*}*/
 .image-container{
   width: 70%;
   margin-left: 60px;
@@ -233,6 +233,17 @@ h2 a{
   margin-top: 10px;
   color: #003E80;
   text-decoration: none;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
 }
 
 @media (max-width: 600px) {

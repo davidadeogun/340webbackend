@@ -26,7 +26,43 @@ router.get("/register", utilities.handleErrors(accountController.buildRegister))
  * Unit 4. Process Registration*/
 router.post("/register", regValidate.registationRules(), regValidate.checkRegData, utilities.handleErrors(accountController.registerAccount))
 
+/*********************************
+ * Account management view
+ **/
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
+
+/*********************************
+ * Account update view
+ **/
+router.get("/update-information/:account_id",
+    utilities.checkLogin,
+    utilities.handleErrors(accountController.buildUpdateAccountInformation)
+)
+
+/*********************************
+ * Account update handler
+ **/
+router.post("/update-information",
+    utilities.checkLogin,
+    regValidate.updateInAccountInformationRules(),
+    regValidate.checkUpdateAccountData,
+    utilities.handleErrors(accountController.updateAccountInformation)
+)
+
+/*********************************
+ * Password update handler
+ **/
+router.post("/update-password",
+    utilities.checkLogin,
+    regValidate.changePasswordRules(),
+    regValidate.checkUpdatePasswordData,
+    utilities.handleErrors(accountController.updateAccountPassword)
+)
+
+/*********************************
+ * Logout
+ **/
+router.get("/logout", utilities.logout)
 
 
 

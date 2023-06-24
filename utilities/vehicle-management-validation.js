@@ -8,7 +8,6 @@ const validate = {}
  * ********************************* */
 validate.addVehicleClassRules = () => {
     return [
-        // name is required and must be string
         body("name")
             .trim()
             .isLength({ min: 3, max: 25 })

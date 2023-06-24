@@ -1,4 +1,5 @@
 const invModel = require("../models/inventory-model")
+const accModel = require("../models/account-model")
 const Util = {}
 const jwt = require("jsonwebtoken") //Unit 5
 const env = require("dotenv").config()    //Unit 5
@@ -44,20 +45,18 @@ Util.checkJWTToken = (req, res, next) => {
     process.env.ACCESS_TOKEN_SECRET,
     function (err, accountData) {
      if (err) {
-      req.flash("Please log in")
-      res.clearCookie("jwt")
-      return res.redirect("/account/login")
+        req.flash("Please log in")
+        res.clearCookie("jwt")
+        return res.redirect("/account/login")
      }
      res.locals.accountData = accountData
      res.locals.loggedin = 1
      next()
     })
   } else {
-   next()
+      next()
   }
  }
-
-module.exports = Util
 
 
 /* **************************************
@@ -156,12 +155,51 @@ Util.buildClassificationList = async function(){
  * ************************************ */
 Util.checkLogin = (req, res, next) => {
   if (res.locals.loggedin) {
-    console.log('----------------check ok Here----------')
     next()
   } else {
-    console.log('----------------check failed ----------')
     req.flash("notice", "Please log in.")
     return res.redirect("/account/login")
   }
- }
+}
+
+/* ****************************************
+ *  Middleware to Check user account type
+ * ************************************ */
+Util.checkUserAccountType = (req, res, next) => {
+  if (['Admin', 'Employee'].includes(res.locals.accountData.account_type)) {
+    next()
+  } else {
+    req.flash("notice", "Only Admins and Employees are allowed to visit this route.")
+    return res.redirect("/account")
+  }
+}
+
+Util.checkExistingEmail = async (req, res, next) => {
+  const account_email = req.body.account_email;
+  const result = await accModel.checkExistingEmail(account_email)
+  // if(result < 1 || (result === 1 && req.body.account_email === res.locals.accountData.account_email)){
+  //   next()
+  // }
+  if(result < 1){
+    next()
+  }
+  else {
+    req.flash("notice", "Email already exists.")
+    return res.redirect("/account/update-information")
+  }
+}
+
+/* ****************************************
+* Middleware to check token validity  Unit 5
+**************************************** */
+Util.logout = (req, res, next) => {
+  if (req.cookies.jwt) {
+    res.locals.accountData = null
+    res.locals.loggedin = 0
+    req.flash("Logged out")
+    res.clearCookie("jwt")
+    return res.redirect("/")
+  }
+}
+
 module.exports = Util

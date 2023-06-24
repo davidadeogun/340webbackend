@@ -66,7 +66,6 @@ invCont.buildAddClassification = async function (req, res) {
 invCont.createNewClassification = async function (req, res) {
   const { name } = req.body;
   const result = await invModel.addClassification(name);
-  console.log(result)
   let nav = await utilities.getNav()
   req.flash(
       "info",
@@ -220,7 +219,6 @@ invCont.buildDeleteInventory = async function (req, res) {
     *  Delete inventory
 * ************************** */
 invCont.deleteInventory = async function (req, res) {
-  console.log(req.body)
   const inv_id = parseInt(req.body.inv_id);
   const result = await invModel.deleteInventoryById(inv_id);
   if(result){
