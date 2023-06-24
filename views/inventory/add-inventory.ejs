@@ -15,14 +15,7 @@
        
         <form action="/inv/add-inventory" method="post">
             <label for="classification">Choose a category:</label>
-            <select id="classification" name="classification_id">
-                <% if (classifications.length > 0) { %>
-                    <% classifications.forEach(item => { %>
-                        <option value="<%= item.classification_id %>"><%= item.classification_name %></option>
-                    <%  }) %>
-                <% } %>
-            </select>
-
+            <%- select %>
             <label for="make">Make</label>
             <input id="make" type="text" name="inv_make" placeholder="Make must contain minimum of 3 letters" value="<%= locals.inv_make %>" pattern="[a-zA-Z]{3,25}$" required>
 

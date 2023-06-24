@@ -34,5 +34,19 @@ router.get("/type/:classificationId", invController.buildByClassificationId);
 // Route to deliver the inventory detail view
 router.get("/detail/:inventoryId", invController.buildByVehicleInventoryId);
 
+//Unit 5
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+//Edit inventory
+router.get('/edit/:inventory_id', utilities.handleErrors(invController.buildEditInventory))
+
+//Update inventory
+router.post('/update', validate.updateInventoryRules(), validate.checkUpdateInventoryData, utilities.handleErrors(invController.updateInventory))
+
+//Delete inventory view
+router.get('/delete/:inventory_id', utilities.handleErrors(invController.buildDeleteInventory))
+
+//Delete inventory
+router.post('/delete', utilities.handleErrors(invController.deleteInventory))
 
 module.exports = router;

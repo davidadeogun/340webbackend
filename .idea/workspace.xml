@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b87275f0-a765-4963-849d-9ed0ecea2913" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/inv-update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/inventory/delete-confirm.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/inventory/edit-inventory.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/accountController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/accountController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/invController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/invController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/account-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/account-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/inventory-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/inventory-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/accountRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/accountRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/inventoryRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/inventoryRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/vehicle-management-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/vehicle-management-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/account/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/account/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/account/management.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/account/management.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/inventory/add-inventory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/inventory/add-inventory.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/inventory/management.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/inventory/management.ejs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.1.13/bin/php" />
+  <component name="ProjectId" id="2RO8n6FEtKep5tNXD9WjGeXtlSY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/chuks/Documents/Coding/david-adeogun/340webbackend/views/inventory",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.build",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views/inventory" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b87275f0-a765-4963-849d-9ed0ecea2913" name="Changes" comment="" />
+      <created>1687109931984</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687109931984</updated>
+      <workItem from="1687109933592" duration="4732000" />
+      <workItem from="1687220711750" duration="1160000" />
+      <workItem from="1687385438802" duration="57000" />
+      <workItem from="1687385525317" duration="2951000" />
+      <workItem from="1687441155302" duration="599000" />
+      <workItem from="1687470349575" duration="27019000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

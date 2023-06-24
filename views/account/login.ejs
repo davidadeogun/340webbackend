@@ -24,10 +24,10 @@
            <input id="email" type="text" name="account_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 
            <label for="account_password">Password</label>
-           <input id="password" type="text" name="account_password" placeholder="Password" id="pword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+           <input id="password" type="password" name="account_password" placeholder="Password" id="pword" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,}$" required>
 
 
-           <p class="password-instruction">Password must be minimum of 12 characters and incldues 1 capital letter,
+           <p class="password-instruction">Password must be minimum of 6 characters and includes 1 capital letter,
             1 number and 1 special character.
            </p>
 

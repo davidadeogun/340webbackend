@@ -11,7 +11,7 @@ Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications()
   let list = "<ul>"
   list += '<li><a href="/" title="Home page">Home</a></li>'
-  data.rows.forEach((row) => {
+  data.forEach((row) => {
     list += "<li>"
     list +=
       '<a href="/inv/type/' +
@@ -63,6 +63,7 @@ module.exports = Util
 /* **************************************
 * Build the classification view HTML
 * ************************************ */
+
 Util.buildClassificationGrid = async function(data){
   let grid
   if(data.length > 0){
@@ -92,6 +93,7 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
 
 
 //Step
@@ -127,4 +129,39 @@ Util.buildVehicleInfoGrid = async function(data){
   }
   return infoView
 }
+
+/***************************************
+    * Build the classification list view HTML
+* ************************************ */
+
+Util.buildClassificationList = async function(){
+  let classification = await invModel.getClassifications()
+  let list
+  if(classification.length > 0){
+    list = '<select id="classificationList" name="classification_id">'
+    classification.forEach(item => {
+      list += '<option value="' + item.classification_id +'">'
+      list += item.classification_name
+      list += '</option>'
+    })
+    list += '</select>'
+  } else {
+    list += '<p class="notice">No classification.</p>'
+  }
+  return list
+}
+
+/* ****************************************
+ *  Check Login  Unit 5
+ * ************************************ */
+Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+    console.log('----------------check ok Here----------')
+    next()
+  } else {
+    console.log('----------------check failed ----------')
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+ }
 module.exports = Util
