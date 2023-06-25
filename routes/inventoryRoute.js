@@ -36,9 +36,11 @@ router.get("/detail/:inventoryId", invController.buildByVehicleInventoryId);
 
 //Unit 5
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
-
+//testing something real quick
 //Edit inventory
 router.get('/edit/:inventory_id', utilities.checkUserAccountType, utilities.handleErrors(invController.buildEditInventory))
+
+//
 
 //Update inventory
 router.post('/update', utilities.checkUserAccountType, validate.updateInventoryRules(), validate.checkUpdateInventoryData, utilities.handleErrors(invController.updateInventory))
